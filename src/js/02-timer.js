@@ -38,7 +38,7 @@ const options = {
 }
 };
 
-const flatpickr = flatpickr("#datetime-picker", options);
+flatpickr("#datetime-picker", options);
 
 
 
