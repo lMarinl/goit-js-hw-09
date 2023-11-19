@@ -70,9 +70,6 @@ function startTimer() {
      render(time)
    };
 
-    console.log(date);
-   
-    console.log(difference);
     
 }, 1000)
 };

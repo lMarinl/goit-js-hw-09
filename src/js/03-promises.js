@@ -11,20 +11,18 @@ function onSubmit(event) {
 const delay = parseInt(form.elements.delay.value);
 const step = parseInt(form.elements.step.value);
 const amount = parseInt(form.elements.amount.value);
+form.reset();
 
+  for (let i = 0; i < amount; i+=1) {
 
-  for (let i = 1; i <= amount; i += 1) {
-
-    createPromise(i, delay + step * i)
+    createPromise(i+1,  delay + i * step)
    
   .then(({ position, delay }) => {
-    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
     Notiflix.Notify.info(`✅ Fulfilled promise ${position} in ${delay}ms`)
     
   })
       .catch(({ position, delay }) => {
     Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
-    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
   });
   };
 };
